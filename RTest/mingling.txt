@@ -1,0 +1,45 @@
+#set working directory,the"\" should be changed into "/"
+setwd("C:/Users/lzz0032/Documents/R")
+
+#read the data
+S1<- read.csv("S1.csv")
+
+#show first line of data
+head(S1)
+
+#descirbe statistis
+summary(Value)
+sd(Value)
+length(Value)
+sort(Value)
+table(Value)
+table(DateTime,Value)
+plot(DateTime,Value)
+hist(Value)
+cor(A1.g.,A2.g.)
+
+#t.test for the mean
+t.test(Value,mu=63.32)
+
+#read the data from the choose file,keep the header
+data1<-read.csv(file.choose(),header=T)
+
+#open the sound data creat by the sensor
+
+#list the virables of the data
+names(data1)
+
+#look at the data
+data1
+
+
+
+#create a side-by-side boxplot of the data
+boxplot(data1$Value ~data1$DateTime)
+
+#Creat an anova table
+sound.aov<-aov(data1$Value ~data1$DateTime)
+summary(sound.aov)
+
+#do a tukey pairware test
+TukeyHSD(sound.aov)
